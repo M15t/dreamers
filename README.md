@@ -1,4 +1,4 @@
-# sample_echo
+# Dreamers
 
 Source for sample website build by Echo (Golang framework)
 
@@ -29,7 +29,7 @@ Update 2018-09-23
 Move to folder:
 
 ```
-$ cd sample_echo
+$ cd dreamers
 ```
 
 Run main.go
