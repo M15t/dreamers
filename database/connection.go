@@ -1,10 +1,11 @@
 package database
 
 import (
+	"dreamers/models"
+	"fmt"
+
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
-	"fmt"
-	"sample_echo/models"
 )
 
 var db *gorm.DB
@@ -32,7 +33,6 @@ func InitDB(filepath string) *gorm.DB {
 	//		fmt.Println("Auto migrating", reflect.TypeOf(model).Name(), "...")
 	//	}
 	//}
-
 
 	// here we check for any database errors then exit
 	if err != nil {

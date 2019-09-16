@@ -1,9 +1,10 @@
 package api
 
 import (
-	"github.com/labstack/echo"
+	"dreamers/api/handlers"
+
 	"github.com/jinzhu/gorm"
-	"sample_echo/api/handlers"
+	"github.com/labstack/echo"
 )
 
 func BackendGroup(g *echo.Group, db *gorm.DB) {

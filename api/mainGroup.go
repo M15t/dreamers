@@ -1,9 +1,10 @@
 package api
 
 import (
-	"sample_echo/api/handlers"
-	"github.com/labstack/echo"
+	"dreamers/api/handlers"
+
 	"github.com/jinzhu/gorm"
+	"github.com/labstack/echo"
 )
 
 func MainGroup(g *echo.Group, db *gorm.DB) {

@@ -1,8 +1,9 @@
 package main
 
 import (
+	"dreamers/routers"
+
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
-	"sample_echo/routers"
 )
 
 func main() {

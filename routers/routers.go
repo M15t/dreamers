@@ -1,14 +1,15 @@
 package routers
 
 import (
+	"dreamers/api"
+	"dreamers/database"
+	"fmt"
+	"net/http"
+
+	"github.com/foolin/echo-template"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	"sample_echo/database"
 	"github.com/qor/validations"
-	"github.com/foolin/echo-template"
-	"sample_echo/api"
-	"net/http"
-	"fmt"
 )
 
 func customHTTPErrorHandler(err error, c echo.Context) {

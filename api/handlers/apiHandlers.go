@@ -1,11 +1,12 @@
 package handlers
 
 import (
+	"dreamers/models"
+	"fmt"
+	"net/http"
+
 	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo"
-	"net/http"
-	"sample_echo/models"
-	"fmt"
 )
 
 type data map[string]interface{}
@@ -26,13 +27,13 @@ func CreateDiary(db *gorm.DB) echo.HandlerFunc {
 			fmt.Println("Error:", err)
 			return c.JSON(http.StatusOK, data{
 				"status": false,
-				"err": err,
+				"err":    err,
 			})
 		}
 
 		return c.JSON(http.StatusCreated, data{
 			"status": true,
-			"diary": diary,
+			"diary":  diary,
 		})
 
 		// old method and test
