@@ -6,9 +6,10 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/foolin/echo-template"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"github.com/foolin/goview"
+	"github.com/foolin/goview/supports/echoview-v4"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/qor/validations"
 )
 
@@ -25,11 +26,12 @@ func customHTTPErrorHandler(err error, c echo.Context) {
 	c.Logger().Error(err)
 }
 
+// New returns a new Echo instance with all the necessary middleware and routes configured.
 func New() *echo.Echo {
 	e := echo.New()
 
-	// add default render views by echotemplate
-	e.Renderer = echotemplate.Default()
+	// add default render views
+	e.Renderer = echoview.Default()
 
 	// add custom handle for 404, 500 error
 	e.HTTPErrorHandler = customHTTPErrorHandler
@@ -50,7 +52,7 @@ func New() *echo.Echo {
 	e.Use(middleware.Recover())
 
 	// generate template for frontend
-	mainMW := echotemplate.NewMiddleware(echotemplate.TemplateConfig{
+	mainMW := echoview.NewMiddleware(goview.Config{
 		Root:         "views/frontend",
 		Extension:    ".html",
 		Master:       "layouts/master",
@@ -59,7 +61,7 @@ func New() *echo.Echo {
 	})
 
 	// generate template for backend
-	backendMW := echotemplate.NewMiddleware(echotemplate.TemplateConfig{
+	backendMW := echoview.NewMiddleware(goview.Config{
 		Root:         "views/backend",
 		Extension:    ".html",
 		Master:       "layouts/master",

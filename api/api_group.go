@@ -4,7 +4,7 @@ import (
 	"dreamers/api/handlers"
 
 	"github.com/jinzhu/gorm"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 func APIGroup(g *echo.Group, db *gorm.DB) {
