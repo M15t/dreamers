@@ -1,0 +1,17 @@
+basePath: /
+host: localhost:9013
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: A poetic web experience where visitors send anonymous stories to the
+    stars. Built with Echo framework in Go, Dreamers displays a night sky where stars
+    hold personal narratives. Each page refresh repositions the stars randomly, creating
+    a celestial sanctuary for shared stories that can only be discovered by chance—your
+    stories remain safely hidden among the stars.
+  termsOfService: http://swagger.io/terms/
+  title: Dreamers API
+  version: "1.0"
+paths: {}
+swagger: "2.0"
