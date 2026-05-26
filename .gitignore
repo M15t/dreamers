@@ -15,3 +15,4 @@ coverage-all.out
 *.local
 /up.json
 *.code-workspace
+.DS_Store
